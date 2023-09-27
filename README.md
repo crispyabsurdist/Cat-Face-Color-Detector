@@ -3,6 +3,8 @@
 A Python application for detecting cat faces and classifying their colors(black and white for now) using OpenCV and a pre-trained deep learning model. This is a Work In Progress!
 I still need to fine adjust the dataset and also create a larger dataset so that the classification model will get better.
 
+**Having big problems recognizing black cats... **
+
 ## Overview
 
 This project consists of three Python scripts for cat-related tasks:

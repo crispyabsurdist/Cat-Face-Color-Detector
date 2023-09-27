@@ -5,8 +5,10 @@ import shutil
 
 # Define the target size (64x64 pixels)
 TARGET_SIZE = (64, 64)
+
 # Define the pixel intensity threshold to classify faces as black or white
-INTENSITY_THRESHOLD = 50  # Adjust this value as needed
+# Adjust this value as needed. Lower values indicate darker regions and vice versa.
+INTENSITY_THRESHOLD = 128 
 
 def is_black_cat_face(image):
     # Convert the image to grayscale

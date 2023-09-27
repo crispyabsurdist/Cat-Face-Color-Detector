@@ -52,7 +52,7 @@ while True:
         cv2.rectangle(frame, (x, y), (x + w, y + h), RECTANGLE_COLOR, 2)
         cv2.putText(frame, color, (x, y - 10), FONT, FONT_SCALE, FONT_COLOR, FONT_THICKNESS)
 
-    cv2.imshow("CatFace Color Detection", frame)
+    cv2.imshow("Cat Face Color Detection", frame)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break

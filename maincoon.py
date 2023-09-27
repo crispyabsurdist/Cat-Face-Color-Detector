@@ -4,16 +4,11 @@ import cv2
 import tensorflow as tf
 import numpy as np
 
-# Load the pre-trained cat face cascade classifier
 cat_cascade = cv2.CascadeClassifier("haarcascade_frontalcatface.xml")
-
-# Load a pre-trained model for cat color classification
 model = tf.keras.models.load_model("cat_color_model.h5")
 
-# Define a function to classify the color of a cat
 def classify_cat_color(image):
-    # Resize the image to the input size expected by the model (224x224)
-    image = cv2.resize(image, (224, 224))
+    image = cv2.resize(image, (64, 64))
     
     # Convert the image to RGB color space
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -64,7 +59,7 @@ while True:
         )
 
     # Display the frame with cat faces and their colors
-    cv2.imshow("Cat Color Detection", frame)
+    cv2.imshow("CatFace Color Detection", frame)
 
     # Exit the loop if 'q' key is pressed
     if cv2.waitKey(1) & 0xFF == ord("q"):

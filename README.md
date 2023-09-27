@@ -32,8 +32,7 @@ VALID_PATH=/path/to/validation_data
 ## Usage
 
 ### Dataset
-
-The dataset used for training the cat color classification model is available at https://www.kaggle.com/andrewmvd/cat-dataset. The dataset contains 25,000 images of cats with 12,500 images of each cat type (black and white). The dataset is split into training and validation sets with 20,000 and 5,000 images, respectively.
+If don't want to build a custom dataset, you can use the one at https://www.kaggle.com/datasets/azmeenasiraj/cat-faces-data-set.
 
 ### maincoon.py
 
@@ -63,3 +62,6 @@ python3 cat_trainer.py
 ```bash
 python3 cat_scraper.py
 ```
+
+### sort_cat_faces.py
+The sort_cat_faces.py script is a useful tool for sorting cat images based on the color of the cat's face. It uses the OpenCV library to detect cat faces and the grayscale black-to-white ratio to determine the color of the cat's face.

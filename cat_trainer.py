@@ -16,11 +16,11 @@ if not os.path.exists(TRAIN_PATH):
 datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1.0 / 255)
 
 train_gen = datagen.flow_from_directory(
-    TRAIN_PATH, target_size=(224, 224), batch_size=32, class_mode="categorical"
+    TRAIN_PATH, target_size=(64, 64), batch_size=32, class_mode="categorical"
 )
 
 valid_gen = datagen.flow_from_directory(
-    VALID_PATH, target_size=(224, 224), batch_size=32, class_mode="categorical"
+    VALID_PATH, target_size=(64, 64), batch_size=32, class_mode="categorical"
 )
 
 # Load the MobileNetV2 model, excluding top layers

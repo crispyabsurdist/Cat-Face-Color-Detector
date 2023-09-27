@@ -10,6 +10,7 @@ This project consists of three Python scripts for cat-related tasks:
 - **maincoon.py:** Detects cat faces in a live video stream or a video file and classifies their colors using a pre-trained deep learning model.
 - **cat_trainer.py:** Trains a cat color classification model using a custom dataset of black and white cat images.
 - **cat_scraper.py:** Scrapes cat images from Pixabay based on a query and downloads them for building the dataset.
+- **sort_cat_faces.py** This script reads images from a folder, resizes them to a target size, detects cat faces in the images, and moves the images to a folder based on whether the cat face is black or white.
 
 ## Installation
 

@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import tensorflow as tf
 
-# Dataset paths 
+# Dataset paths
 load_dotenv()
 TRAIN_PATH = os.getenv("TRAIN_PATH")
 VALID_PATH = os.getenv("VALID_PATH")
@@ -12,8 +12,17 @@ VALID_PATH = os.getenv("VALID_PATH")
 if not os.path.exists(TRAIN_PATH):
     raise FileNotFoundError(f"{TRAIN_PATH} does not exist")
 
-# Create data generators
-datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1.0 / 255)
+# Create data generators with image data augmentation
+datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+    rescale=1.0 / 255,
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode="nearest"
+)
 
 train_gen = datagen.flow_from_directory(
     TRAIN_PATH, target_size=(64, 64), batch_size=32, class_mode="categorical"
@@ -44,7 +53,7 @@ model.compile(
     metrics=["accuracy"],
 )
 
-# Train the model
+# Train the model with image data augmentation
 model.fit(train_gen, validation_data=valid_gen, epochs=10)
 
 # Save the trained model
